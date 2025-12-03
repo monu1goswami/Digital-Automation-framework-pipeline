@@ -1,0 +1,11 @@
+# Maven / Java
+target/
+*.log
+*.class
+
+# Eclipse
+.classpath
+.project
+.settings/
+reports/
+screenshots/
