@@ -5,10 +5,15 @@ import com.automation.framework.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class LoginPage extends BasePage {
 
     private WebDriver driver;
+    private static final Logger logger = LogManager.getLogger(LoginPage.class);
+
 
     public LoginPage() {
         super(DriverFactory.getDriver());
@@ -27,14 +32,17 @@ public class LoginPage extends BasePage {
 
     // Actions
     public void enterUsername(String username) {
+    	logger.info("Entering username: " + username);
         type(usernameField, username);
     }
 
     public void enterPassword(String password) {
+    	logger.info("Entering password");
         type(passwordField, password);
     }
 
     public void clickLoginButton() {
+    	  logger.info("Clicking login button");
         click(loginButton);
     }
 
